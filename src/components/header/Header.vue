@@ -3,30 +3,30 @@
 </script>
 
 <template>
-  <header class="header">
-    <div class="container">
+  <header class="header bg-gray-900 fixed top-10 left-0 right-0 z-50 mx-4 rounded-full">
+    <div class="container flex items-center justify-between py-5 px-10 bg-gray-900 rounded-full">
       <div class="header-left">
         <div class="logo">
           <a href="#" title="FOSACHA">
-            <img src="https://fosacha.com/upload/config/original/fosacha-1645000405.png" alt="">
+            <img class="inline" src="https://fosacha.com/upload/config/original/fosacha-1645000405.png" alt="">
           </a>
         </div>
       </div>
 
-      <div class="header-right">
+      <div class="header-right flex items-center">
         <div class="menu">
-          <div class="menu-hamburger">
-            <div class="menu-hamburger-line"></div>
-            <div class="menu-hamburger-line"></div>
-            <div class="menu-hamburger-line"></div>
+          <div class="menu-hamburger flex flex-col justify-between cursor-pointer lg:hidden">
+            <div class="menu-hamburger-line h-1 w-6 bg-white mb-1"></div>
+            <div class="menu-hamburger-line h-1 w-6 bg-white mb-1"></div>
+            <div class="menu-hamburger-line h-1 w-6 bg-white"></div>
           </div>
-          <div class="menu-close d-lg-none">
-            <a href="javascript:;" class="jsClose-mobileMenu">
+          <div class="menu-close d-lg-none lg:block">
+            <a href="javascript:;">
               <img src="https://fosacha.com/template/images/ic-close-menu.svg" alt="">
             </a>
           </div>
 
-          <div class="menu-items">
+          <div class="menu-items hidden lg:flex flex-col lg:flex-row lg:items-center lg:justify-between">
             <div class="menu-links active">
               <div class="menu-parent">
                 <a href="#" activelink="" link="https://fosacha.com/introduce"
@@ -51,8 +51,7 @@
             </div>
             <div class="menu-links">
               <div class="menu-parent">
-                <a href="#" activelink="" link="" class="nav__link
-                                       ">
+                <a href="#" activelink="" link="" class="nav__link">
                   News
                 </a>
                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
@@ -80,7 +79,7 @@
               </div>
             </div>
 
-            <ul class="list-contact-menu my-4 my-lg-5 d-flex d-lg-none">
+            <ul class="list-contact-menu my-6 lg:my-12 flex d-lg-none">
               <li>
                 <a href="mail:info@fosacha.com">
                   <img src="https://fosacha.com/template/images/ic-contact-menu-1.svg" alt="">
@@ -96,7 +95,7 @@
               </li>
             </ul>
 
-            <ul class="list-social-menu d-flex d-lg-none">
+            <ul class="list-social-menu d-lg-none relative flex flex-wrap items-center justify-center gap-8">
               <li>
                 <a href="https://www.youtube.com/channel/UCm0rzF-RIM9vUY6eUFg8J_w">
                   <img src="https://fosacha.com/template/images/ic-social-menu-1.svg" alt="">
@@ -123,67 +122,13 @@
 </template>
 
 <style scoped>
-.header {
-  position: fixed;
-  top: 50px;
-  left: 0;
-  right: 0;
-  z-index: 111;
-  margin: 0 15px;
-  //transition: ;
-}
-
-.container {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  background: #181818;
-  border-radius: 60px;
-  padding: 20px 40px;
-}
-
 .logo {
   width: 180px;
   height: 40px;
 }
 
-.header-right {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-left: auto;
-}
-
 .menu {
   display: block;
-}
-
-.list-contact-menu {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-}
-
-.list-social-menu {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-}
-
-.d-flex {
-  display: flex !important;
-}
-
-.my-4 {
-  margin-top: 1.5rem !important;
-  margin-bottom: 1.5rem !important;
 }
 
 .header .menu-parent {
@@ -224,11 +169,6 @@
     display: none !important;
   }
 
-  .my-lg-5 {
-    margin-top: 3rem !important;
-    margin-bottom: 3rem !important;
-  }
-
   .menu-sub {
     position: absolute;
     opacity: 0;
@@ -237,8 +177,9 @@
     transition: all .3s;
   }
 
-  .header .menu-links:hover::before, .header .menu-links.active::before {
-    width: 80px;
+  .header .menu-links:hover::before,
+  .header .menu-links.active::before {
+    @apply w-20;
   }
 
   .header .menu-links::before {
